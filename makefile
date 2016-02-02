@@ -19,3 +19,9 @@ ctor_bin = ctor
 ctor_src = ctor.cpp
 $(ctor_bin) : $(ctor_src)
 	g++ -std=c++14 $(ctor_src) -o $(ctor_bin)
+
+# functor
+functor_bin = functor
+functor_src = functor.cpp
+$(functor_bin) : $(functor_src)
+	g++ -std=c++14 $(functor_src) -o $(functor_bin)
