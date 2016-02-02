@@ -114,7 +114,7 @@ int main(int argc, char** argv) {
 
     ft f = nullptr;
 
-    auto lm3 =[](int a){
+    auto lm3 =[](int a) {
         cout
             << "lambda as real function pointer"
             << endl;
