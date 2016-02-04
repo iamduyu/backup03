@@ -52,4 +52,11 @@ excep_src = excep.cpp
 $(excep_bin) : $(excep_src)
 	g++ -std=c++14 $(excep_src) -g -o $(excep_bin)
 
-.DEFAULT_GOAL = excep
+# template
+template_bin = template
+template_src = template.cpp
+$(template_bin) : $(template_src)
+	g++ -std=c++14 $(template_src) -g -o $(template_bin)
+
+
+.DEFAULT_GOAL = assign

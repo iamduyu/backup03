@@ -2,6 +2,8 @@
 #include <typeinfo>
 using namespace std;
 
+class Foo;
+
 class Bar {
     public:
         int b;
@@ -31,7 +33,7 @@ class Bar {
 
         // copy assign
         const Bar& operator= (const Bar& b) {
-
+                this->b = b.b;
             cout
                 << " copy assign? " << endl
                 << "this->b\n"
@@ -40,6 +42,8 @@ class Bar {
                 << b.b
                 << endl;
         }
+
+        const Bar& operator= (const Foo& f);
     
         
 };
@@ -99,6 +103,19 @@ class Foo {
 
 };
 
+// this is first chose by the compiler
+const Bar& Bar::operator= (const Foo& f) {
+    b=3;
+    cout
+        << "first chose, direct foo to bar"
+        << endl;
+}
+
+
+class Third {
+    
+};
+
 int main(int argc, char** argv) {
     
     // only call default ctor, operator assign will called
@@ -125,13 +142,15 @@ int main(int argc, char** argv) {
 
     //Bar test;
 
-    Foo c;
+    Foo foo;
     Bar bar;
     cout << endl << endl << endl;
     bar.b=999;
     //bar = (Bar)c;
     //bar = c;
-    bar = c;
+    bar = foo;
+    //Third tr;
+    //bar = tr;
 
     cout
         << "bar.b=\n"
