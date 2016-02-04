@@ -18,13 +18,15 @@ int main(void) {
     
     // std::move
     
-    string str1 = "str1";
+    string str1 = "who_owns_me?";
     string str2 = move(str1);
 
     cout
-        << str1
-        << str2
+        << boolalpha
+        << str1 << endl
+        << str2 << endl
+        << str1.empty() << endl
+        << str2.max_size() << endl
+        << str2[1] << endl
         << endl;
-
-
 }
