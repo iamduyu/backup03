@@ -58,5 +58,10 @@ template_src = template.cpp
 $(template_bin) : $(template_src)
 	g++ -std=c++14 $(template_src) -g -o $(template_bin)
 
+# stl
+stl_bin = stl
+stl_src = stl.cpp
+$(stl_bin) : $(stl_src)
+	g++ -std=c++14 $(stl_src) -g -o $(stl_bin)
 
-.DEFAULT_GOAL = assign
+.DEFAULT_GOAL = stl
