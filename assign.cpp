@@ -3,10 +3,11 @@
 using namespace std;
 
 class Foo;
+class Third;
 
 class Bar {
     public:
-        int b;
+        int b=102;
         
         // default ctor
         Bar() {
@@ -43,7 +44,7 @@ class Bar {
                 << endl;
         }
 
-        const Bar& operator= (const Foo& f);
+        const Bar& operator= (const Third& f);
     
         
 };
@@ -103,18 +104,18 @@ class Foo {
 
 };
 
+class Third {
+    
+};
+
 // this is first chose by the compiler
-const Bar& Bar::operator= (const Foo& f) {
+const Bar& Bar::operator= (const Third& f) {
     b=3;
     cout
         << "first chose, direct foo to bar"
         << endl;
 }
 
-
-class Third {
-    
-};
 
 int main(int argc, char** argv) {
     
@@ -148,7 +149,13 @@ int main(int argc, char** argv) {
     bar.b=999;
     //bar = (Bar)c;
     //bar = c;
+    
+    // call Foo::operator Bar(), then call Bar::operator= (Bar&)
+    // but this path is undifined, don't do it, just define the real assign op, from Foo to Bar.
+    // then just one function call.
     bar = foo;
+
+
     //Third tr;
     //bar = tr;
 
