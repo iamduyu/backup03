@@ -6,6 +6,7 @@
 #include <array>
 #include <algorithm>
 #include <cassert>
+#include <typeinfo>
 
 using namespace std;
 
@@ -109,7 +110,8 @@ int main(int argc, char** argv) {
     //lm2();
 
     //assert(0);
-    
+  
+    // lambda as function pointer.
     typedef int(*ft)(int);
 
     ft f = nullptr;
@@ -120,9 +122,17 @@ int main(int argc, char** argv) {
             << endl;
         return 1;
     };
-
-    f = lm3;
-
-    f(1);
+    //f = lm3;
+    //f(1);
     
+    // type info
+    cout
+        << typeid(lm3).name()
+        << endl;
+
+    R"("test")";
+}
+
+void test() throw() {
+    ;
 }
