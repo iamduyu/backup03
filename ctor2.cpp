@@ -58,7 +58,7 @@ int main(void) {
     One o = t;
  
     // if 1) then NO CTOR of one will be called
-    // the new One object is "naked"
+    // the new One object is "naked" (only GCC, msvc will force you to return a value from Two::One())
     cout << o.o << endl;
 
     //One o(t);
