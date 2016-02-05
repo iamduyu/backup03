@@ -65,6 +65,8 @@ int main(void) {
     //Two t = o;
 
     // this means you need a exist object
+    // also, the One::operator Two&() show return a ref
+    // or you get a rvalue of One;
     Two& t = o;
     
     cout << t.id << endl;
