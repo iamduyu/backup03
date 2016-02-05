@@ -40,6 +40,8 @@ Two::Two(One& o) {
 
 Two::operator One() {
     cout << "Two::operator One()" << endl;
+	// msvc force a return value, while gcc needn't.
+	return *(new One);
 }
 
 
