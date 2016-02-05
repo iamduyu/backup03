@@ -61,7 +61,12 @@ int main(void) {
     o.t.id=3;
     cout << "------start test----------" << endl;
 
-    Two t = o;
+    // this means you need a new object
+    //Two t = o;
+
+    // this means you need a exist object
+    Two& t = o;
+    
     cout << t.id << endl;
     t.id=4;
     cout << o.t.id << endl;
