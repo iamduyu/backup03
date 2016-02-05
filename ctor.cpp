@@ -22,7 +22,7 @@ struct One {
 	}
 
     // it's also a normal function, Two&() diff from Two()
-    operator Two&();
+    explicit operator Two&();
 };
 
 
@@ -67,7 +67,7 @@ int main(void) {
     // this means you need a exist object
     // also, the One::operator Two&() show return a ref
     // or you get a rvalue of One;
-    Two& t = o;
+    Two& t = (Two)o;
     
     cout << t.id << endl;
     t.id=4;
