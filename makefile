@@ -88,7 +88,7 @@ $(ni_bin) : $(ni_src)
 ni2_bin = ni2
 ni2_src = ni2.cpp
 $(ni2_bin) : $(ni2_src)
-	g++ -std=c++14 $(ni2_src) -g -o $(ni2_bin)
+	g++ -std=c++14 -pedantic $(ni2_src) -g -o $(ni2_bin)
 
 
 .DEFAULT_GOAL = ni2

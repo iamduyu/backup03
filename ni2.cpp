@@ -8,9 +8,16 @@ struct To {
     To(const struct From&) {
         cout << "To From&" << endl;
     } // converting constructor
+
+    To(const To&){
+        cout << "copy ctor" << endl;
+    }
 };
  
 struct From {
+    
+    //less const will win! in overload selection
+
     operator To() {
         cout << "From operator To" << endl;
         return To();
@@ -28,4 +35,8 @@ int main()
     //  From::operator To();, it will be selected instead of the ctor in this case)
     //To t3 = static_cast<To>(f); // direct-initialization: calls the constructor
     //const To& r = f; // reference-initialization: ambiguous
+    //
+    
+    short s = 0;
+    const int& i = s;
 }
