@@ -70,4 +70,9 @@ ctor2_src = ctor2.cpp
 $(ctor2_bin) : $(ctor2_src)
 	g++ -std=c++14 $(ctor2_src) -g -o $(ctor2_bin)
 
-.DEFAULT_GOAL = ctor
+# ctor4
+ctor4_bin = ctor4
+ctor4_src = ctor4.cpp
+$(ctor4_bin) : $(ctor4_src)
+	g++ -std=c++14 $(ctor4_src) -g -o $(ctor4_bin)
+.DEFAULT_GOAL = ctor4
