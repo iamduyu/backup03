@@ -75,4 +75,20 @@ ctor4_bin = ctor4
 ctor4_src = ctor4.cpp
 $(ctor4_bin) : $(ctor4_src)
 	g++ -std=c++14 $(ctor4_src) -g -o $(ctor4_bin)
-.DEFAULT_GOAL = ctor4
+
+
+# ni
+ni_bin = ni
+ni_src = ni.cpp
+$(ni_bin) : $(ni_src)
+	g++ -std=c++14 $(ni_src) -g -o $(ni_bin)
+
+
+# ni2
+ni2_bin = ni2
+ni2_src = ni2.cpp
+$(ni2_bin) : $(ni2_src)
+	g++ -std=c++14 $(ni2_src) -g -o $(ni2_bin)
+
+
+.DEFAULT_GOAL = ni2
